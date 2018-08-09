@@ -4,7 +4,7 @@ package pl.drinkbook.api;
 import java.util.List;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,12 +19,12 @@ public class DrinkComponentController {
   @Setter(onMethod = @__({@Autowired}))
   public DrinkComponentService drinkComponentService;
 
-  @PostMapping(value = "/availableComponents")
+  @GetMapping(value = "/availableComponents")
   private List<DrinkComponentDto> getAvailableResources(){
     return drinkComponentService.getAvailableResources();
   }
 
-  @PostMapping(value = "/findComponent")
+  @GetMapping(value = "/findComponent")
   private List<DrinkComponentDto> findComponentByName(@RequestParam("component_name") ComponentType type){
     return drinkComponentService.findComponentByName(type);
   }
