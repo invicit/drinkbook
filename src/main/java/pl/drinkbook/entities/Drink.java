@@ -17,13 +17,14 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import pl.drinkbook.common.Drinkable;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "drink")
 @SequenceGenerator(allocationSize = 1, name = "SEQ", sequenceName = "seq_drink")
-public class Drink {
+public class Drink implements Drinkable {
 
   @Id
   @Column(name = "drink_id")

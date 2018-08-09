@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import pl.drinkbook.common.Drinkable;
 import pl.drinkbook.dto.DrinkDto;
 import pl.drinkbook.dto.DrinkLightDto;
 import pl.drinkbook.entities.Drink;
@@ -20,17 +21,18 @@ public class DrinkConverter {
     return ins.stream().map(this::entityToDto).collect(Collectors.toList());
   }
 
-  public List<DrinkLightDto> entityListToLightDtoList(List<Drink> ins){
-    return ins.stream().map(this::entityToLightDto).collect(Collectors.toList());
+  public List<Drinkable> drinkableListToLightDtoList(List<Drink> ins){
+    return ins.stream().map(this::drinkableToLightDto).collect(Collectors.toList());
   }
 
-  public DrinkLightDto entityToLightDto(Drink in){
+  public DrinkLightDto drinkableToLightDto(Drinkable in){
     DrinkLightDto out = new DrinkLightDto();
     out.setId(in.getId());
     out.setName(in.getName());
     out.setRecipe(in.getRecipe());
     return out;
   }
+
 
 
   public DrinkDto entityToDto(Drink in){
@@ -42,12 +44,6 @@ public class DrinkConverter {
     return out;
   }
 
-  public DrinkLightDto dtoToLightDto(DrinkDto in){
-    DrinkLightDto out = new DrinkLightDto();
-    out.setId(in.getId());
-    out.setName(in.getName());
-    out.setRecipe(in.getRecipe());
-    return out;
-  }
+
 
 }

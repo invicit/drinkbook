@@ -1,7 +1,5 @@
 package pl.drinkbook.converter;
 
-
-
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

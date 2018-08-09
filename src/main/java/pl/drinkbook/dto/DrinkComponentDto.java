@@ -5,6 +5,7 @@ import java.util.Map;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.drinkbook.common.DrinkComponentable;
 import pl.drinkbook.entities.Drink;
 import pl.drinkbook.entities.DrinkComponentToDrinkRelation;
 import pl.drinkbook.enums.ComponentType;
@@ -14,7 +15,7 @@ import pl.drinkbook.enums.UnitType;
 @Getter
 @Setter
 @NoArgsConstructor
-public class DrinkComponentDto {
+public class DrinkComponentDto implements DrinkComponentable {
 
   private Long id;
   private Double availableResources;

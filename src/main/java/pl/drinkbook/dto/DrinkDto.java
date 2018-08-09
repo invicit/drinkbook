@@ -4,11 +4,12 @@ import java.util.List;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import pl.drinkbook.common.Drinkable;
 
 @Getter
 @Setter
 @NoArgsConstructor
-public class DrinkDto {
+public class DrinkDto implements Drinkable {
 
   private Long id;
   private String name;

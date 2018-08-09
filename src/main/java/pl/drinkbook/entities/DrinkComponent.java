@@ -14,6 +14,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import pl.drinkbook.common.DrinkComponentable;
 import pl.drinkbook.enums.ComponentType;
 import pl.drinkbook.enums.UnitType;
 
@@ -22,7 +23,7 @@ import pl.drinkbook.enums.UnitType;
 @Entity
 @Table(name = "drink_componennt")
 @SequenceGenerator(allocationSize = 1, name = "SEQ1", sequenceName = "seq_component")
-public class DrinkComponent {
+public class DrinkComponent implements DrinkComponentable {
 
   @Id
   @Column(name="component_id")
