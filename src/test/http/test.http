@@ -1,0 +1,17 @@
+GET http://localhost:40001/drinks/list
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:40001/drinks/findDrink/Wodka
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+GET http://localhost:40001/drinks/showAvailable
+Accept: */*
+Cache-Control: no-cache
+
+###
