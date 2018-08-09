@@ -3,8 +3,6 @@ package pl.drinkbook.dto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import pl.drinkbook.entities.Drink;
-import pl.drinkbook.entities.DrinkComponent;
 
 
 @Getter

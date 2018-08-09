@@ -25,15 +25,14 @@ public class DrinkController {
   }
 
   @GetMapping(value = "/findDrink/{drinkName}")
-  public List<Drinkable> findDrinksByName(@PathVariable("drinkName") String drinkName){
+  public List<Drinkable> findDrinksByName(@PathVariable("drinkName") String drinkName) {
     return drinkService.findDrinksByName(drinkName);
   }
 
   @GetMapping(value = "/showAvailable")
-  public List<Drinkable> showAvailable(){
+  public List<Drinkable> showAvailable() {
     return drinkService.findAvailable();
   }
-
 
 
 }

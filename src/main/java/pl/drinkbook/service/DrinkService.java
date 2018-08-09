@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import pl.drinkbook.common.Drinkable;
 import pl.drinkbook.converter.DrinkConverter;
 import pl.drinkbook.dto.DrinkDto;
-import pl.drinkbook.dto.DrinkLightDto;
 import pl.drinkbook.repository.DrinkRepository;
 
 
@@ -35,14 +34,17 @@ public class DrinkService {
   }
 
   public boolean hasEnoughtComponents(DrinkDto drink) {
-    return drink.getRelationList().stream().allMatch(r -> r.getNeededResources() < r.getComponent().getAvailableResources());
+    return drink.getRelationList().stream()
+        .allMatch(r -> r.getNeededResources() < r.getComponent().getAvailableResources());
   }
 
   public List<Drinkable> findAvailable() {
-    return getDrinks().stream().filter(this::hasEnoughtComponents).map(drinkConverter::drinkableToLightDto).collect(Collectors.toList());
+    return getDrinks().stream().filter(this::hasEnoughtComponents)
+        .map(drinkConverter::drinkableToLightDto).collect(Collectors.toList());
   }
 
 
   //TODO
-  public void save(){}
+  public void save() {
+  }
 }

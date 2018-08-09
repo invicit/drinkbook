@@ -1,13 +1,10 @@
 package pl.drinkbook.dto;
 
 import java.util.List;
-import java.util.Map;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import pl.drinkbook.common.DrinkComponentable;
-import pl.drinkbook.entities.Drink;
-import pl.drinkbook.entities.DrinkComponentToDrinkRelation;
 import pl.drinkbook.enums.ComponentType;
 import pl.drinkbook.enums.UnitType;
 

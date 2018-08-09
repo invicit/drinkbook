@@ -20,16 +20,15 @@ public class DrinkComponentController {
   public DrinkComponentService drinkComponentService;
 
   @GetMapping(value = "/availableComponents")
-  private List<DrinkComponentDto> getAvailableResources(){
+  private List<DrinkComponentDto> getAvailableResources() {
     return drinkComponentService.getAvailableResources();
   }
 
   @GetMapping(value = "/findComponent")
-  private List<DrinkComponentDto> findComponentByName(@RequestParam("component_name") ComponentType type){
+  private List<DrinkComponentDto> findComponentByName(
+      @RequestParam("component_name") ComponentType type) {
     return drinkComponentService.findComponentByName(type);
   }
-
-
 
 
 }

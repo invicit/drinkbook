@@ -1,7 +1,5 @@
 package pl.drinkbook;
 
-import java.util.ArrayList;
-import java.util.List;
 import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -42,7 +40,6 @@ public class PostConstructBean {
     drink.setName("Wodka");
     drink.setRecipe("Nalej wodki do szklanki");
 
-
     DrinkComponent component = new DrinkComponent();
     component.setAvailableResources(12.0);
     component.setComponentType(ComponentType.VODKA);
@@ -58,8 +55,6 @@ public class PostConstructBean {
     drinkRelation.setDrink(drink);
     relationRepository.save(drinkRelation);
 
-
-
 //    List<DrinkComponentToDrinkRelation> drinkComponentRelationList = new ArrayList<>();
 //    drinkComponentRelationList.add(drinkRelation);
 //    component.setRelationList(drinkComponentRelationList);
@@ -71,13 +66,13 @@ public class PostConstructBean {
 //    drink.setRelationList(drinkRelationList);
 //    drinkRepository.save(drink);
   }
+
   private void createDrink2() {
 
     Drink drink = new Drink();
     drink.setName("Whisky");
     drink.setRecipe("Nalej whisky do szklanki i wrzuc cytryne");
     drinkRepository.save(drink);
-
 
     DrinkComponent component = new DrinkComponent();
     component.setAvailableResources(1.0);
@@ -92,10 +87,6 @@ public class PostConstructBean {
     component1.setCountable(true);
     component1.setUnitType(UnitType.PIECE);
     drinkComponentRepository.save(component1);
-
-
-
-
 
     DrinkComponentToDrinkRelation drinkRelation = new DrinkComponentToDrinkRelation();
     drinkRelation.setNeededReosurces(4);

@@ -26,7 +26,7 @@ import pl.drinkbook.enums.UnitType;
 public class DrinkComponent implements DrinkComponentable {
 
   @Id
-  @Column(name="component_id")
+  @Column(name = "component_id")
   @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "SEQ1")
   private Long id;
 

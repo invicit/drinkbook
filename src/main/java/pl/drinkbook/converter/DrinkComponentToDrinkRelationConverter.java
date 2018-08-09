@@ -13,14 +13,14 @@ public class DrinkComponentToDrinkRelationConverter {
   @Setter(onMethod = @__({@Autowired}))
   DrinkComponentConverter componentConverter;
 
-  public DrinkComponentToDrinkRelationDto entityToDto(DrinkComponentToDrinkRelation in, DrinkDto owner){
+  public DrinkComponentToDrinkRelationDto entityToDto(DrinkComponentToDrinkRelation in,
+      DrinkDto owner) {
     DrinkComponentToDrinkRelationDto out = new DrinkComponentToDrinkRelationDto();
     out.setDrink(owner);
     out.setNeededResources(in.getNeededReosurces());
     out.setComponent(componentConverter.entityToDto(in.getComponent()));
     return out;
   }
-
 
 
 }

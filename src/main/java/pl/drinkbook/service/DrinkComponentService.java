@@ -9,7 +9,6 @@ import pl.drinkbook.dto.DrinkComponentDto;
 import pl.drinkbook.enums.ComponentType;
 import pl.drinkbook.repository.DrinkComponentRepository;
 
-//TODO
 @Service
 public class DrinkComponentService {
 
@@ -24,6 +23,7 @@ public class DrinkComponentService {
   }
 
   public List<DrinkComponentDto> findComponentByName(ComponentType name) {
-    return componentConverter.entityListToDtoList(drinkComponentRepository.findByComponentType(name));
+    return componentConverter
+        .entityListToDtoList(drinkComponentRepository.findByComponentType(name));
   }
 }

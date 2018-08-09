@@ -9,11 +9,11 @@ import pl.drinkbook.entities.DrinkComponent;
 @Component
 public class DrinkComponentConverter {
 
-  public List<DrinkComponentDto> entityListToDtoList(List<DrinkComponent> ins){
+  public List<DrinkComponentDto> entityListToDtoList(List<DrinkComponent> ins) {
     return ins.stream().map(this::entityToDto).collect(Collectors.toList());
   }
 
-  public DrinkComponentDto entityToDto(DrinkComponent in){
+  public DrinkComponentDto entityToDto(DrinkComponent in) {
     DrinkComponentDto out = new DrinkComponentDto();
     out.setId(in.getId());
     out.setAvailableResources(in.getAvailableResources());
