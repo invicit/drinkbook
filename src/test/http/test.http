@@ -15,3 +15,9 @@ Accept: */*
 Cache-Control: no-cache
 
 ###
+
+GET http://localhost:40001/components/availableComponents
+Accept: */*
+Cache-Control: no-cache
+
+###
