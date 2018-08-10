@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import pl.drinkbook.dto.DrinkComponentDto;
-import pl.drinkbook.enums.ComponentType;
+import pl.drinkbook.enums.EComponentType;
 import pl.drinkbook.service.DrinkComponentService;
 
 @RestController
@@ -20,13 +20,13 @@ public class DrinkComponentController {
   public DrinkComponentService drinkComponentService;
 
   @GetMapping(value = "/availableComponents")
-  private List<DrinkComponentDto> getAvailableResources() {
+  public List<DrinkComponentDto> getAvailableComponents() {
     return drinkComponentService.getAvailableResources();
-  }
+    }
 
-  @GetMapping(value = "/findComponent")
-  private List<DrinkComponentDto> findComponentByName(
-      @RequestParam("component_name") ComponentType type) {
+  @GetMapping(value = "/findComponentByType")
+  public List<DrinkComponentDto> findComponentByType(
+      @RequestParam("component_type") EComponentType type) {
     return drinkComponentService.findComponentByName(type);
   }
 

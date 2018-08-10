@@ -1,6 +1,6 @@
 package pl.drinkbook.enums;
 
-public enum UnitType {
+public enum EUnitType {
   PIECE,
   LITER,
   KILOGRAM;

@@ -10,16 +10,8 @@ import lombok.Setter;
 @NoArgsConstructor
 public class DrinkComponentToDrinkRelationDto {
 
-
   private DrinkDto drink;
   private DrinkComponentDto component;
-  private long neededResources;
+  private Long neededResources;
 
-
-  public DrinkComponentToDrinkRelationDto(DrinkDto drink, DrinkComponentDto component,
-      long neededResources) {
-    this.drink = drink;
-    this.component = component;
-    this.neededResources = neededResources;
-  }
 }

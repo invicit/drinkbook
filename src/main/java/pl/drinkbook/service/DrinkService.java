@@ -5,32 +5,32 @@ import java.util.stream.Collectors;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.drinkbook.common.Drinkable;
 import pl.drinkbook.converter.DrinkConverter;
 import pl.drinkbook.dto.DrinkDto;
-import pl.drinkbook.repository.DrinkRepository;
+import pl.drinkbook.dto.DrinkLightDto;
+import pl.drinkbook.repository.IDrinkRepository;
 
 
 @Service
 public class DrinkService {
 
   @Setter(onMethod = @__({@Autowired}))
-  private DrinkRepository drinkRepository;
+  private IDrinkRepository drinkRepository;
 
   @Setter(onMethod = @__({@Autowired}))
   private DrinkConverter drinkConverter;
 
 
-  public List<Drinkable> getDrinksDto() {
-    return drinkConverter.drinkableListToLightDtoList(drinkRepository.findAll());
+  public List<DrinkLightDto> getDrinksDto() {
+    return drinkConverter.entityListToLightDtoList(drinkRepository.findAll());
   }
 
   public List<DrinkDto> getDrinks() {
     return drinkConverter.entityListToDtoList(drinkRepository.findAll());
   }
 
-  public List<Drinkable> findDrinksByName(String drinkName) {
-    return drinkConverter.drinkableListToLightDtoList(drinkRepository.findByName(drinkName));
+  public List<DrinkLightDto> findDrinksByName(String drinkName) {
+    return drinkConverter.entityListToLightDtoList(drinkRepository.findByName(drinkName));
   }
 
   public boolean hasEnoughtComponents(DrinkDto drink) {
@@ -38,7 +38,7 @@ public class DrinkService {
         .allMatch(r -> r.getNeededResources() < r.getComponent().getAvailableResources());
   }
 
-  public List<Drinkable> findAvailable() {
+  public List<DrinkLightDto> findAvailable() {
     return getDrinks().stream().filter(this::hasEnoughtComponents)
         .map(drinkConverter::drinkableToLightDto).collect(Collectors.toList());
   }

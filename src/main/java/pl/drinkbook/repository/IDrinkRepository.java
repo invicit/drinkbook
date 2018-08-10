@@ -3,10 +3,10 @@ package pl.drinkbook.repository;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
-import pl.drinkbook.entities.Drink;
+import pl.drinkbook.entities.DrinkBo;
 
-public interface DrinkRepository extends JpaRepository<Drink, Long> {
+public interface IDrinkRepository extends JpaRepository<DrinkBo, Long> {
 
-  List<Drink> findByName(@Param("drink_name") String name);
+  List<DrinkBo> findByName(@Param("drink_name") String name);
 
 }

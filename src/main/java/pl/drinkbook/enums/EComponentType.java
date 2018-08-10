@@ -1,6 +1,6 @@
 package pl.drinkbook.enums;
 
-public enum ComponentType {
+public enum EComponentType {
   ORANGE,
   LEMON,
   SUGAR,

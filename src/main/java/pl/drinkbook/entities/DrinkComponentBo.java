@@ -14,16 +14,15 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
-import pl.drinkbook.common.DrinkComponentable;
-import pl.drinkbook.enums.ComponentType;
-import pl.drinkbook.enums.UnitType;
+import pl.drinkbook.enums.EComponentType;
+import pl.drinkbook.enums.EUnitType;
 
 @Getter
 @Setter
 @Entity
 @Table(name = "drink_componennt")
 @SequenceGenerator(allocationSize = 1, name = "SEQ1", sequenceName = "seq_component")
-public class DrinkComponent implements DrinkComponentable {
+public class DrinkComponentBo {
 
   @Id
   @Column(name = "component_id")
@@ -35,17 +34,17 @@ public class DrinkComponent implements DrinkComponentable {
 
   @Column(name = "component_name")
   @Enumerated(EnumType.STRING)
-  private ComponentType componentType;
+  private EComponentType componentType;
 
   @Column(name = "component_unit")
   @Enumerated(EnumType.STRING)
-  private UnitType unitType;
+  private EUnitType unitType;
 
   @Column(name = "coutable")
   private Boolean countable;
 
   @OneToMany(mappedBy = "component")
-  private List<DrinkComponentToDrinkRelation> relationList;
+  private List<DrinkComponentToDrinkRelationBo> relationList;
 
 
 }

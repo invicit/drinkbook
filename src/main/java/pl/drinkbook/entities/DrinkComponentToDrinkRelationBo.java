@@ -16,7 +16,7 @@ import lombok.Setter;
 @Setter
 @Entity
 @Table(name = "drink_componennt_drink")
-public class DrinkComponentToDrinkRelation {
+public class DrinkComponentToDrinkRelationBo {
 
 
   @Id
@@ -25,11 +25,11 @@ public class DrinkComponentToDrinkRelation {
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "drink_id")
-  private Drink drink;
+  private DrinkBo drink;
 
   @ManyToOne(fetch = FetchType.LAZY)
   @JoinColumn(name = "component_id")
-  private DrinkComponent component;
+  private DrinkComponentBo component;
 
 
   @Column(name = "needed_resources")

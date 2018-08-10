@@ -6,14 +6,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.drinkbook.converter.DrinkComponentConverter;
 import pl.drinkbook.dto.DrinkComponentDto;
-import pl.drinkbook.enums.ComponentType;
-import pl.drinkbook.repository.DrinkComponentRepository;
+import pl.drinkbook.enums.EComponentType;
+import pl.drinkbook.repository.IDrinkComponentRepository;
 
 @Service
 public class DrinkComponentService {
 
   @Setter(onMethod = @__({@Autowired}))
-  private DrinkComponentRepository drinkComponentRepository;
+  private IDrinkComponentRepository drinkComponentRepository;
 
   @Setter(onMethod = @__({@Autowired}))
   private DrinkComponentConverter componentConverter;
@@ -22,7 +22,7 @@ public class DrinkComponentService {
     return componentConverter.entityListToDtoList(drinkComponentRepository.findAll());
   }
 
-  public List<DrinkComponentDto> findComponentByName(ComponentType name) {
+  public List<DrinkComponentDto> findComponentByName(EComponentType name) {
     return componentConverter
         .entityListToDtoList(drinkComponentRepository.findByComponentType(name));
   }

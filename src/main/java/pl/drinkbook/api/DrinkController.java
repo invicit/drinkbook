@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import pl.drinkbook.common.Drinkable;
+import pl.drinkbook.dto.DrinkLightDto;
 import pl.drinkbook.service.DrinkService;
 
 @RestController
@@ -19,18 +19,17 @@ public class DrinkController {
 
 
   @GetMapping(value = "/list")
-  public List<Drinkable> getDrinkNames() {
-
+  public List<DrinkLightDto> getDrinkNames() {
     return drinkService.getDrinksDto();
   }
 
   @GetMapping(value = "/findDrink/{drinkName}")
-  public List<Drinkable> findDrinksByName(@PathVariable("drinkName") String drinkName) {
+  public List<DrinkLightDto> findDrinksByName(@PathVariable("drinkName") String drinkName) {
     return drinkService.findDrinksByName(drinkName);
   }
 
   @GetMapping(value = "/showAvailable")
-  public List<Drinkable> showAvailable() {
+  public List<DrinkLightDto> showAvailable() {
     return drinkService.findAvailable();
   }
 
