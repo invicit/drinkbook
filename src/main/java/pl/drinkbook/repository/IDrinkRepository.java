@@ -7,6 +7,6 @@ import pl.drinkbook.entities.DrinkBo;
 
 public interface IDrinkRepository extends JpaRepository<DrinkBo, Long> {
 
-  List<DrinkBo> findByName(@Param("drink_name") String name);
+  List<DrinkBo> findByName(String name);
 
 }

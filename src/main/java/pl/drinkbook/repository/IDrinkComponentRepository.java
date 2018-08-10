@@ -8,7 +8,7 @@ import pl.drinkbook.enums.EComponentType;
 
 public interface IDrinkComponentRepository extends JpaRepository<DrinkComponentBo, Long> {
 
-  List<DrinkComponentBo> findByComponentType(@Param("component_name") EComponentType name);
+  List<DrinkComponentBo> findByComponentType(EComponentType name);
 
 
 }
